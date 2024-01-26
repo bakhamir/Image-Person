@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWpf", "ImageWpf\ImageWpf.csproj", "{4632C465-969C-444F-B46D-7DEDCCE8BFB4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImgWeb", "..\ImgWeb\ImgWeb\ImgWeb.csproj", "{A8597FB0-C164-4FE0-90C3-C0637D2E7254}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4632C465-969C-444F-B46D-7DEDCCE8BFB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4632C465-969C-444F-B46D-7DEDCCE8BFB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4632C465-969C-444F-B46D-7DEDCCE8BFB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4632C465-969C-444F-B46D-7DEDCCE8BFB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8597FB0-C164-4FE0-90C3-C0637D2E7254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8597FB0-C164-4FE0-90C3-C0637D2E7254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8597FB0-C164-4FE0-90C3-C0637D2E7254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8597FB0-C164-4FE0-90C3-C0637D2E7254}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA53DD6C-2E8F-45DA-AB6D-59476D701124}
+	EndGlobalSection
+EndGlobal

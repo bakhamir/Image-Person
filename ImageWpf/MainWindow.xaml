@@ -12,7 +12,7 @@
         <Image x:Name="image1" HorizontalAlignment="Left" Height="133" Margin="37,33,0,0" VerticalAlignment="Top" Width="311"/>
         <Image x:Name="image2" HorizontalAlignment="Left" Height="128" Margin="37,174,0,0" VerticalAlignment="Top" Width="318"/>
         <Button Content="GetData" HorizontalAlignment="Left" Height="120" Margin="37,304,0,0" VerticalAlignment="Top" Width="185" Click="Button_Click_1"/>
-        <TextBox x:Name="name" HorizontalAlignment="Left" Height="21" Margin="584,33,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="61"/>
+        <TextBox x:Name="name" HorizontalAlignment="Left" Height="21" Margin="584,33,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="61" TextChanged="name_TextChanged"/>
         <TextBox x:Name="address" HorizontalAlignment="Left" Height="19" Margin="584,65,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="61"/>
         <TextBox x:Name="income" HorizontalAlignment="Left" Height="19" Margin="650,89,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="61"/>
         <TextBox x:Name="role" HorizontalAlignment="Left" Height="19" Margin="584,89,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="61"/>

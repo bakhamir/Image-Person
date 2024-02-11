@@ -74,7 +74,7 @@ namespace ImageWpf
                     {
                         var json = await response.Content.ReadAsStringAsync();
                         List<Data> result = JsonConvert.DeserializeObject<List<Data>>(json);
-                        var fromUrl = Convert.FromBase64String(result[0].fromUrl); 
+                        var fromUrl = Convert.FromBase64String(result[0].fromUrl);
                         var fromPc = Convert.FromBase64String(result[0].fromPc);
 
                         image1.Source = (BitmapSource)new ImageSourceConverter().ConvertFrom(fromUrl);
@@ -88,13 +88,72 @@ namespace ImageWpf
             }
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private async Task Button_Click_2Async(object sender, RoutedEventArgs e)
         {
-            var url = "http://localhost:5196/CreateNewUser";
-            using (HttpClient client = new HttpClient())
+            try
             {
+                string _name = name.Text;
+                int _age = int.Parse(age.Text);
+                string _address = address.Text;
+                string _photo = photo.Text;
+                string _role = role.Text;
+                int _income = int.Parse(income.Text);
 
+                bool success = await CreateNewUser(_name, _age, _address, _photo, _role, _income);
+
+                if (success)
+                {
+                    MessageBox.Show("User created successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to create user.");
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private async Task<bool> CreateNewUser(string name, int age, string address, string photo, string role, int income)
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    // Формируем URL для запроса
+                    string apiUrl = $"/CreateNewUser";
+
+                    // Подготавливаем данные для отправки
+                    var requestData = new
+                    {
+                        name,
+                        age,
+                        address,
+                        photo,
+                        role,
+                        income
+                    };
+
+                    // Преобразуем данные в формат JSON
+                    string jsonContent = Newtonsoft.Json.JsonConvert.SerializeObject(requestData);
+
+                    // Создаем контент для HTTP-запроса
+                    var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                    // Отправляем POST-запрос на сервер
+                    HttpResponseMessage response = await client.PostAsync(apiUrl, content);
+
+                    // Проверяем успешность запроса
+                    return response.IsSuccessStatusCode;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
     }
 }

@@ -122,10 +122,10 @@ namespace ImageWpf
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    // Формируем URL для запроса
+
                     string apiUrl = $"/CreateNewUser";
 
-                    // Подготавливаем данные для отправки
+        
                     var requestData = new
                     {
                         name,
@@ -136,16 +136,16 @@ namespace ImageWpf
                         income
                     };
 
-                    // Преобразуем данные в формат JSON
+            
                     string jsonContent = Newtonsoft.Json.JsonConvert.SerializeObject(requestData);
 
-                    // Создаем контент для HTTP-запроса
+
                     var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
-                    // Отправляем POST-запрос на сервер
+        
                     HttpResponseMessage response = await client.PostAsync(apiUrl, content);
 
-                    // Проверяем успешность запроса
+
                     return response.IsSuccessStatusCode;
                 }
             }
